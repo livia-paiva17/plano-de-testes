@@ -134,7 +134,6 @@ sistema e aceitação.
 
 # 10. Recursos e Papéis
 
-| Papel | Responsável |
 | Desenvolvedora Front-end | Livia |
 | Desenvolvedora Back-end | Kauany |
 | Designer UI/UX | Maria Julia |
@@ -145,7 +144,6 @@ sistema e aceitação.
 
 # 11. Aprovações
 
-| Nome | Papel |
 | Equipe | Kauany Silva, Livia Paiva, Maria Julia Costa e Yasmin Salgado |
 | Equipe | QA |
 | Marco Antônio | Avaliador |
