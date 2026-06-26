@@ -4,13 +4,18 @@
 
 # 1. Identificação do Documento
 
-- Título: Plano de Testes - Health Way
-- Versão: 1.0
-- Autor: Kauany Silva, Livia Paiva, Maria Julia Costa e Yasmin Salgado
-- Data de criação: 15/05/2026
-- Última revisão: 15/05/2026
-- Status:
-- Histórico de Revisões:
+* **Título:** Plano de Testes – Health Way
+* **Versão:** 2.0
+* **Autores:** Kauany Silva, Livia Paiva, Maria Julia Costa e Yasmin Salgado
+* **Data de criação:** 15/05/2026
+* **Última revisão:** 26/06/2026
+* **Status:** Em revisão
+* **Histórico de Revisões:**
+
+| Versão | Data       | Descrição                                |
+| ------ | ---------- | ---------------------------------------- |
+| 1.0    | 15/05/2026 | Criação do documento                     |
+| 2.0    | 26/06/2026 | Ajustes conforme devolutiva do professor |
 
 ---
 
@@ -18,86 +23,121 @@
 
 ## 2.1 Resumo do Projeto
 
-O Health Way é um sistema web desenvolvido para auxiliar usuários no gerenciamento de vacinas, consultas , medicamentos e cuidados com os pets.
-Desenvolvimento em React (frontend) + Node.js (backend) + PostgreSQL. 
+O Health Way é um sistema web desenvolvido para auxiliar usuários no gerenciamento de vacinas, consultas, medicamentos e cuidados com pets. O sistema foi desenvolvido utilizando React no frontend, Node.js no backend e PostgreSQL como banco de dados.
 
 ## 2.2 Objetivo do Plano de Testes
 
-Este documento define a estratégia, escopo, cronograma e critérios de testes do sistema Heath Way versão 1.0. Abrange os níveis de teste de integração,
-sistema e aceitação.
+Este documento define a estratégia, escopo, ambiente, critérios, cronograma e responsabilidades da execução dos testes da versão 1.0 do sistema Health Way, garantindo a qualidade das funcionalidades implementadas.
 
 ## 2.3 Público-alvo
 
-- Desenvolvedores
-- Equipe QA
-- Professor
+* Desenvolvedores
+* Equipe de Testes
+* Professor Avaliador
 
 ---
 
 # 3. Escopo
 
-## 3.1 O que será testado (In Scope)
+## 3.1 Funcionalidades que serão testadas
 
-- Cadastro de usuários
-- Login
-- Agendamento de vacinas
-- Consulta de vacinas
-- Cadastro de medicamentos
-- Consulta de hospitas próximos
-- Consulta de agendamentos
-- Responsividade mobile
+| Funcionalidade                 | Prioridade |
+| ------------------------------ | ---------- |
+| Cadastro de usuários           | Alta       |
+| Login                          | Alta       |
+| Agendamento de vacinas         | Alta       |
+| Consulta de vacinas            | Média      |
+| Cadastro de medicamentos       | Média      |
+| Consulta de hospitais próximos | Média      |
+| Consulta de agendamentos       | Alta       |
+| Responsividade mobile          | Baixa      |
 
-## 3.2 O que NÃO será testado (Out of Scope)
+## 3.2 Fora do Escopo
 
-- APIs externas do governo
-- Compatibilidade com navegadores antigos
-- Infraestrutura do servidor
+* APIs externas do governo
+* Compatibilidade com navegadores antigos
+* Infraestrutura do servidor
+* Testes em ambiente de produção
 
 ---
 
-# 4. Estratégia de Teste
+# 4. Estratégia de Testes
 
-## 4.1 Níveis de teste
+## 4.1 Níveis de Teste
 
-- Teste funcional
-- Teste de integração
-- Teste E2E
+| Nível                   | Objetivo                                                         | Escopo                                                     | Ferramenta |
+| ----------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------- | ---------- |
+| Testes Funcionais       | Validar se cada funcionalidade atende aos requisitos             | Cadastro, login, medicamentos, consultas, vacinas e pets   | Cypress    |
+| Testes de Integração    | Verificar a comunicação entre frontend, backend e banco de dados | APIs, autenticação, gravação e consulta no PostgreSQL      | Cypress    |
+| Testes End-to-End (E2E) | Simular o uso completo do sistema pelo usuário                   | Fluxo completo de cadastro, login, agendamento e consultas | Cypress    |
 
-## 4.2 Ferramentas
+## 4.2 Testes Não Funcionais
 
-- GitHub
-- Cypress
-- Google Chrome
+| Tipo        | Objetivo                                                                                         |
+| ----------- | ------------------------------------------------------------------------------------------------ |
+| Performance | Verificar tempo de carregamento das páginas principais e resposta das APIs.                      |
+| Segurança   | Validar autenticação, autorização e tratamento de entradas inválidas (ex.: SQL Injection e XSS). |
+| Usabilidade | Avaliar facilidade de navegação, organização das telas e responsividade em dispositivos móveis.  |
 
 ---
 
 # 5. Critérios
 
-## 5.1 Critérios de entrada
+## 5.1 Critérios de Entrada
 
-- Sistema funcionando
-- Banco de dados conectado
+* Sistema compilando sem erros.
+* Banco de dados disponível.
+* Ambiente de testes configurado.
+* Casos de teste elaborados.
 
-## 5.2 Critérios de saída
+## 5.2 Critérios de Saída
 
-- Todos os testes executados
-- Nenhum bug crítico aberto
+* 95% dos casos de teste executados.
+* Pelo menos 90% dos testes aprovados.
+* Nenhum bug crítico ou alto em aberto.
+* Relatório de testes concluído.
+
+## 5.3 Critérios de Aprovação dos Testes
+
+Um teste será considerado:
+
+* **Aprovado:** resultado obtido corresponde ao esperado.
+* **Falho:** resultado diferente do esperado.
+* **Bloqueado:** não foi possível executar devido a problemas externos.
+
+## 5.4 Classificação da Severidade dos Bugs
+
+| Severidade | Descrição                                                            |
+| ---------- | -------------------------------------------------------------------- |
+| Crítica    | Impede o uso do sistema ou causa perda de dados.                     |
+| Alta       | Afeta funcionalidades principais, mas existe alternativa temporária. |
+| Média      | Impacta funcionalidades secundárias sem impedir o uso.               |
+| Baixa      | Problemas visuais ou pequenos erros de usabilidade.                  |
+
+A classificação será realizada pela equipe de testes em conjunto com os desenvolvedores.
 
 ---
 
 # 6. Entregáveis
 
-- Plano de testes
-- Relatório de bugs
-- Casos de teste
+* Plano de Testes
+* Casos de Teste
+* Relatório de Execução
+* Relatório de Bugs
+* Evidências (prints e vídeos quando necessário)
 
 ---
 
-# 7. Ambiente de Teste
+# 7. Ambiente de Testes
 
-- Windows 11
-- Google Chrome
-- Celular Android
+| Ambiente            | URL                           | Configuração    |
+| ------------------- | ----------------------------- | --------------- |
+| Desenvolvimento     | http://localhost:3000         | React + Node.js |
+| Backend             | http://localhost:5000         | Node.js         |
+| Banco de Dados      | PostgreSQL 16                 | Banco local     |
+| Navegador           | Google Chrome 137 ou superior | Cache limpo     |
+| Sistema Operacional | Windows 11                    | Atualizado      |
+| Mobile              | Android 13 ou superior        | Google Chrome   |
 
 ---
 
@@ -105,53 +145,71 @@ sistema e aceitação.
 
 ## Riscos
 
-- Sistema offline
-- Falha no login
-- Lentidão
-- Ambiente de staging instável
-- Flakiness em testes automatizados
-- Mudança de requisitos durante a execução dos testes 
-
+* Sistema indisponível.
+* Banco de dados offline.
+* Lentidão do sistema.
+* Falhas de integração.
+* Mudanças de requisitos.
+* Instabilidade do ambiente de testes.
 
 ## Contingências
 
-- Refazer testes
-- Corrigir bugs encontrados
+* Reexecução dos testes.
+* Correção dos bugs encontrados.
+* Atualização dos casos de teste.
+* Utilização de ambiente local caso o servidor esteja indisponível.
 
 ---
 
 # 9. Cronograma
 
-| Etapa | Data |
-|---|---|
-| Planejamento | 15/05 |
-| Testes de login | 16/05 |
-| Testes de agendamento | 17/05 |
-| Testes Pagina pets | 18/05 |
-| Correções | 19/05 |
+| Atividade                        | Data  |
+| -------------------------------- | ----- |
+| Planejamento                     | 15/05 |
+| Elaboração dos casos de teste    | 15/05 |
+| Testes de Login e Cadastro       | 16/05 |
+| Testes de Vacinas e Agendamentos | 17/05 |
+| Testes da Página de Pets         | 18/05 |
+| Correção dos Bugs                | 19/05 |
+| Reexecução dos Testes            | 20/05 |
+| Entrega Final                    | 21/05 |
 
 ---
 
 # 10. Recursos e Papéis
 
-| Desenvolvedora Front-end | Livia |
-| Desenvolvedora Back-end | Kauany |
-| Designer UI/UX | Maria Julia |
-| Designer UI/UX | Yasmin |
-| Testadora | Equipe |
+| Integrante  | Função                   | Responsabilidades                                   | Dedicação |
+| ----------- | ------------------------ | --------------------------------------------------- | --------- |
+| Kauany      | Desenvolvedora Back-end  | Correção de APIs e apoio aos testes de integração   | 8 h       |
+| Livia       | Desenvolvedora Front-end | Correção de interface e apoio aos testes funcionais | 8 h       |
+| Maria Julia | UI/UX e Testes Manuais   | Execução dos testes funcionais e registro de bugs   | 6 h       |
+| Yasmin      | Líder de Testes          | Planejamento, validação dos resultados e testes E2E | 8 h       |
+
+Todos os integrantes participarão da validação final dos resultados.
 
 ---
 
 # 11. Aprovações
 
-| Equipe | Kauany Silva, Livia Paiva, Maria Julia Costa e Yasmin Salgado |
-| Equipe | QA |
-| Marco Antônio | Avaliador |
+| Nome              | Cargo               | Data | Status   |
+| ----------------- | ------------------- | ---- | -------- |
+| Kauany Silva      | Desenvolvedora      | ____ | Pendente |
+| Livia Paiva       | Desenvolvedora      | ____ | Pendente |
+| Maria Julia Costa | UI/UX               | ____ | Pendente |
+| Yasmin Salgado    | Líder de Testes     | ____ | Pendente |
+| Marco Antônio     | Professor Avaliador | ____ | Pendente |
 
 ---
 
 # 12. Glossário
 
-- Bug: erro no sistema
-- Login: acesso ao sistema
-- E2E: teste ponta a ponta
+| Termo              | Definição                                                                                |
+| ------------------ | ---------------------------------------------------------------------------------------- |
+| API                | Interface responsável pela comunicação entre frontend e backend.                         |
+| Bug                | Defeito identificado durante os testes.                                                  |
+| E2E                | Teste que simula o fluxo completo do usuário.                                            |
+| Staging            | Ambiente de testes semelhante ao ambiente de produção.                                   |
+| Mock               | Simulação de um serviço ou API utilizada durante os testes.                              |
+| Regression Testing | Testes executados para garantir que alterações não quebraram funcionalidades existentes. |
+| Pipeline CI/CD     | Processo automatizado de integração, testes e implantação do sistema.                    |
+| PostgreSQL         | Sistema Gerenciador de Banco de Dados utilizado pelo projeto.                            |
