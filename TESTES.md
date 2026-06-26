@@ -4,7 +4,7 @@ Plano de Testes - Health Way
 
 1. Identificação do Documento
 
-Título: Plano de Testes – Health Way
+Título: Plano de Testes – Health Way*
 Versão:  2.0
 Autores: Kauany Silva, Livia Paiva, Maria Julia Costa e Yasmin Salgado
 Data de criação: 15/05/2026
